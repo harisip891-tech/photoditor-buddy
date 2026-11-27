@@ -178,9 +178,6 @@ export function HomeScreen() {
             </div>
           ))}
         </div>
-        <p className="text-[11px] text-muted mt-8">
-          Open source (MIT). Your photos never leave your device unless you use a cloud AI tool.
-        </p>
       </div>
     </div>
   );
