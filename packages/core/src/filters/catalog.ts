@@ -1,5 +1,6 @@
 import type { AdjustmentPreset } from '../adjustments/merge';
 import type { FilterCategory, FilterDefinition, LutRecipe } from './types';
+import { CSSGRAM_FILTERS } from './cssgram';
 
 /**
  * Compact constructor used by the tables below. Ids are derived from category and name so
@@ -1497,6 +1498,7 @@ const MINIMAL: FilterDefinition[] = [
 /** The full built-in filter catalogue, grouped in UI order. */
 export const FILTER_CATALOG: readonly FilterDefinition[] = [
   ...FILM,
+  ...CSSGRAM_FILTERS,
   ...VINTAGE,
   ...BLACK_WHITE,
   ...JAPANESE,

@@ -2,6 +2,7 @@ import { generateLut, type Lut3D } from '../lut/cube';
 import { hexToRgb, luminance } from '../math/color';
 import { clamp } from '../math/clamp';
 import type { LutRecipe } from './types';
+import { cssgramColor } from './cssgram';
 
 /**
  * Turns a `LutRecipe` into a concrete 3D LUT. Results are cached by a JSON key because
@@ -15,6 +16,12 @@ export function buildRecipeLut(recipe: LutRecipe, size = 33): Lut3D {
   if (cached) return cached;
   let lut: Lut3D;
   switch (recipe.kind) {
+    case 'cssgram': {
+      lut = generateLut('cssgram', size, (r, g, b) =>
+        cssgramColor([r, g, b], recipe.operations, recipe.overlays),
+      );
+      break;
+    }
     case 'duotone': {
       const shadow = hexToRgb(recipe.shadow);
       const highlight = hexToRgb(recipe.highlight);
