@@ -33,6 +33,20 @@ describe('filter catalogue', () => {
     expect(findFilter('does-not-exist')).toBeUndefined();
   });
 
+  it('ships 26 CSSgram looks with distinct, finite colour transforms', () => {
+    const filters = filtersInCategory('CSSgram');
+    expect(filters).toHaveLength(26);
+    const signatures = new Set<string>();
+    for (const filter of filters) {
+      expect(filter.lut?.kind).toBe('cssgram');
+      if (!filter.lut) throw new Error('Missing CSSgram LUT');
+      const lut = buildRecipeLut(filter.lut, 5);
+      expect(lut.data.every((v) => Number.isFinite(v) && v >= 0 && v <= 1)).toBe(true);
+      signatures.add(JSON.stringify(Array.from(lut.data)));
+    }
+    expect(signatures.size).toBe(filters.length);
+  });
+
   it('builds LUTs for every recipe and caches them', () => {
     for (const filter of FILTER_CATALOG) {
       if (!filter.lut) continue;
