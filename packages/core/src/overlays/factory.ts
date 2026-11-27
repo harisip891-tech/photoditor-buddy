@@ -120,7 +120,7 @@ export function createFrameLayer(frameId = 'thin', color = '#ffffff'): FrameLaye
 }
 
 /** Creates a watermark layer anchored bottom-right. */
-export function createWatermarkLayer(text = '© photoditor-buddy'): WatermarkLayer {
+export function createWatermarkLayer(text = '© HashClick'): WatermarkLayer {
   return {
     id: layerId('watermark'),
     type: 'watermark',

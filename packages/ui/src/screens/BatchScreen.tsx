@@ -100,7 +100,7 @@ export function BatchScreen() {
       if (entries.length === 1) {
         downloadBlob(new Blob([entries[0]!.data as BlobPart], { type: format }), entries[0]!.name);
       } else {
-        downloadBlob(createZip(entries), `photoditor-buddy-batch-${entries.length}.zip`);
+        downloadBlob(createZip(entries), `hashclick-batch-${entries.length}.zip`);
       }
       toast(`Done: ${entries.length} photo${entries.length > 1 ? 's' : ''} exported.`, 'success');
     } finally {
