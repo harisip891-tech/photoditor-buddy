@@ -74,25 +74,11 @@ export function SettingsDialog({ open, onClose }: { open: boolean; onClose: () =
       {tab === 'about' && (
         <div className="text-sm leading-relaxed">
           <p className="mb-2">
-            <strong>photoditor-buddy</strong> is an open-source (MIT) photo editor that runs
-            entirely in your browser. Edits never leave your device unless you use a cloud AI tool
-            with your own key.
-          </p>
-          <p className="mb-2">
-            Free on-device AI: face landmarks (MediaPipe), background removal (MODNet / BiRefNet),
-            2× upscaling (Swin2SR), object eraser (LaMa). Models download once from Hugging Face /
-            Google and are cached.
+            <strong>HashClick</strong>
           </p>
           <p>
-            Source code and documentation:{' '}
-            <a
-              className="text-accent underline"
-              href="https://github.com/alwaysnelson/photoditor-buddy"
-              target="_blank"
-              rel="noreferrer"
-            >
-              github.com/alwaysnelson/photoditor-buddy
-            </a>
+            Your photos stay on your device during local editing. We never upload or store your
+            photos on our servers.
           </p>
         </div>
       )}

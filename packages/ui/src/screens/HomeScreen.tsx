@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Grid2x2, ImagePlus, Images, Settings, Sparkles, Wand2 } from 'lucide-react';
+import { Grid2x2, Hash, ImagePlus, Images, Settings, Sparkles, Wand2 } from 'lucide-react';
 import { useEditorStore } from '../store/editorStore';
 import { createSampleImage } from '../engine/sampleImage';
 import { Button } from '../components/common/Button';
@@ -93,10 +93,10 @@ export function HomeScreen() {
       <div className="max-w-3xl mx-auto px-5 py-10 sm:py-16">
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-2">
-            <span className="h-9 w-9 rounded-xl bg-accent text-accent-contrast flex items-center justify-center font-black">
-              pb
+            <span className="h-9 w-9 rounded-xl bg-accent text-accent-contrast flex items-center justify-center">
+              <Hash size={23} strokeWidth={2.8} aria-hidden="true" />
             </span>
-            <span className="font-semibold text-lg">photoditor-buddy</span>
+            <span className="font-semibold text-lg">HashClick</span>
           </div>
           {!embed && (
             <Button
